@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       // Fetch article list from Worker
-      const listResp = await fetch("https://whio.digital/utils/list-articles");
+      const listResp = await fetch("/utils/list-articles");
       if (!listResp.ok) throw new Error(`HTTP error: ${listResp.status}`);
       const articles = await listResp.json();
 

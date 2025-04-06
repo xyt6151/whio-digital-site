@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   previewsContainer.innerHTML = "";
 
   try {
-    const response = await fetch("https://whio.digital/utils/list-articles");
+    const response = await fetch("/utils/list-articles");
     if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
     const articles = await response.json();
 

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function fetchArticles() {
     try {
-      const resp = await fetch("https://whio.digital/utils/list-articles");
+      const resp = await fetch("/utils/list-articles");
       if (!resp.ok) throw new Error(`HTTP error: ${resp.status}`);
       articles = await resp.json();
       filteredArticles = articles.slice();
