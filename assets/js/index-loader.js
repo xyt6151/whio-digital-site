@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   previewsContainer.innerHTML = "";
 
   try {
+<<<<<<< HEAD
     const response = await fetch("/utils/list-articles");
     console.log("Fetch status:", response.status);
 
@@ -20,6 +21,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       throw new Error(`HTTP error: ${response.status}`);
     }
 
+=======
+    const response = await fetch("https://whio.digital/utils/list-articles");
+    if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+>>>>>>> parent of 2cbee0a (.)
     const articles = await response.json();
     console.log("Fetched articles:", articles);
 

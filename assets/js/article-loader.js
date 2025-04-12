@@ -29,9 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       // Fetch article list from Worker
+<<<<<<< HEAD
       const listResp = await fetch("/utils/list-articles");
       console.log("Fetch status:", listResp.status);
 
+=======
+      const listResp = await fetch("https://whio.digital/utils/list-articles");
+>>>>>>> parent of 2cbee0a (.)
       if (!listResp.ok) throw new Error(`HTTP error: ${listResp.status}`);
 
       const articles = await listResp.json();

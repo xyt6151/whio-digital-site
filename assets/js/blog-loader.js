@@ -11,9 +11,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function fetchArticles() {
     try {
+<<<<<<< HEAD
       const resp = await fetch("/utils/list-articles");
       console.log("Fetch status:", resp.status);
 
+=======
+      const resp = await fetch("https://whio.digital/utils/list-articles");
+>>>>>>> parent of 2cbee0a (.)
       if (!resp.ok) throw new Error(`HTTP error: ${resp.status}`);
 
       articles = await resp.json();

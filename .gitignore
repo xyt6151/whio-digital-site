@@ -2,6 +2,3 @@
 ./.obsidian/
 cloudflare-worker.js
 tree.txt
-./worker/
-./ignore-this-dir/*
-ignore-this-dir/advice.md
