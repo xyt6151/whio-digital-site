@@ -14,8 +14,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     const response = await fetch("/utils/list-articles");
-    if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+    console.log("Fetch status:", response.status);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+
     const articles = await response.json();
+    console.log("Fetched articles:", articles);
 
     if (!Array.isArray(articles) || articles.length === 0) {
       previewsContainer.innerHTML = "<div class='col-12 text-center'><p>No articles found.</p></div>";

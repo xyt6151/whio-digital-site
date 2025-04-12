@@ -12,8 +12,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function fetchArticles() {
     try {
       const resp = await fetch("/utils/list-articles");
+      console.log("Fetch status:", resp.status);
+
       if (!resp.ok) throw new Error(`HTTP error: ${resp.status}`);
+
       articles = await resp.json();
+      console.log("Fetched articles:", articles);
+
       filteredArticles = articles.slice();
       populateYearFilter();
       render();

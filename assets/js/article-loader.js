@@ -30,8 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       // Fetch article list from Worker
       const listResp = await fetch("/utils/list-articles");
+      console.log("Fetch status:", listResp.status);
+
       if (!listResp.ok) throw new Error(`HTTP error: ${listResp.status}`);
+
       const articles = await listResp.json();
+      console.log("Fetched articles:", articles);
 
       const articleMeta = articles.find(a => a.slug === slug);
       if (!articleMeta) {
